@@ -5,9 +5,10 @@ import "./index.css"
 import "reactflow/dist/style.css"
 import HomePage from "./pages/home/HomePage.tsx"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import TurretsPage from "./pages/home/TurretsPage.tsx"
+import InfoPage from "./pages/home/InfoPage.tsx"
 import NotFoundPage from "./pages/home/NotFoundPage.tsx"
 import TurretPage from "./pages/home/TurretPage.tsx"
+import EnemyPage from "./pages/home/EnemyPage.tsx"
 
 const router = createBrowserRouter([
   {
@@ -16,12 +17,16 @@ const router = createBrowserRouter([
     errorElement: <NotFoundPage />,
   },
   {
-    path: "/turrets",
-    element: <TurretsPage />,
+    path: "/info",
+    element: <InfoPage />,
     children: [
       {
-        path: "/turrets/:turretId",
+        path: "/info/turret/:turretId",
         element: <TurretPage />,
+      },
+      {
+        path: "/info/enemy/:enemyId",
+        element: <EnemyPage />,
       },
     ],
   },

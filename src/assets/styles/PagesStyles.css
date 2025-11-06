@@ -4,7 +4,18 @@
   gap: 12px;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
+}
+
+.enemies-list {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .turrets-link-active {
@@ -45,7 +56,7 @@
 
 .turret-image-container {
   position: relative;
-  width: 290px; 
+  width: 290px;
   height: 290px;
   display: flex;
   align-items: center;
@@ -67,46 +78,50 @@
   height: 270px;
 }
 
-.highlight-turret-image-center, .highlight-turret-image-border {
+.highlight-turret-image-center,
+.highlight-turret-image-border {
   opacity: 0.4;
   width: 290px;
   height: 290px;
   transition: all 0.3s ease;
 }
 
-.highlight-turret-image-border.active, .highlight-turret-image-center.active {
+.highlight-turret-image-border.active,
+.highlight-turret-image-center.active {
   opacity: 1;
 }
 
 .turret-page {
-    font-family: PixelarRegular, sans-serif;
-    font-size: 30px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    display: flex;
+  font-family: PixelarRegular, sans-serif;
+  font-size: 30px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
 }
 
 .turret-stats {
-    flex-direction: row;
-    display: flex;
-    gap: 10px;
-    justify-content: space-around;
+  flex-direction: row;
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
 }
 
-.turret-stats-center, .turret-stats-border {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 400px;
-    align-items: stretch;
-    border: 2px solid black;
-    transition: all 0.3s ease;
+.turret-stats-center,
+.turret-stats-border {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 400px;
+  align-items: stretch;
+  border: 2px solid black;
+  transition: all 0.3s ease;
 }
 
-.turret-stats-center:hover, .turret-stats-border:hover {
-    transform: scale(0.8);
+.turret-stats-center:hover,
+.turret-stats-border:hover {
+  transform: scale(0.8);
 }
 
 .stat-title {
@@ -115,7 +130,7 @@
   width: 100%;
   padding: 6px 10px;
   box-sizing: border-box;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .stat-row {
@@ -125,7 +140,7 @@
   width: 100%;
   padding: 6px 10px;
   box-sizing: border-box;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .stat-label {
@@ -136,47 +151,58 @@
   text-align: right;
 }
 
-.turret-back {
-    position: absolute;
-    flex-direction: row;
-    display: flex;
-    top: 18px;
-    left: 10px;
-    font-family: "PixelarRegular", sans-serif;
-    font-size: 30px;
-    border: 2px solid #000;
-    padding: 0px 5px;
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.back-button {
+  position: absolute;
+  flex-direction: row;
+  display: flex;
+  top: 18px;
+  left: 10px;
+  font-family: "PixelarRegular", sans-serif;
+  font-size: 30px;
+  border: 2px solid #000;
+  padding: 0px 5px;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.turret-back:hover {
-    position: absolute;
-    flex-direction: row;
-    display: flex;
-    top: 13px;
-    left: 10px;
-    font-family: "PixelarRegular", sans-serif;
-    font-size: 30px;
-    border: 2px solid #000;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: white;
-    background-color: black;
-    cursor: pointer;
+.back-button:hover {
+  position: absolute;
+  flex-direction: row;
+  display: flex;
+  top: 13px;
+  left: 10px;
+  font-family: "PixelarRegular", sans-serif;
+  font-size: 30px;
+  border: 2px solid #000;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  cursor: pointer;
 }
 
 .arrow-left {
-    font-size: 30px;
-    margin: 0px 5px;
-    transition: all 0.3s ease;
+  font-size: 30px;
+  margin: 0px 5px;
+  transition: all 0.3s ease;
 }
 
 .arrow-left.active {
-    transform: translateX(-10px);
+  transform: translateX(-10px);
+}
+
+.upgrade-tree { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top : 10%;
+    left : 10%;
+    width: 80%;
+    height: 90%;
 }
 
 .upgrade-image {
@@ -191,4 +217,156 @@
   border: 2px solid black;
   width: 64px;
   height: 64px;
+}
+
+.container-home-page {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+/* Hide page scrollbars and prevent scrolling when HomePage mounts */
+body.no-scroll {
+  overflow: hidden;
+  touch-action: none; /* mobile touch scrolling */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body.no-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.container-home-page .header-home-page {
+  width: 70%;
+  position: absolute;
+  z-index: 1;
+  font-family: "PixelarRegular", sans-serif;
+  pointer-events: none;
+  text-transform: uppercase;
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.header-home-page {
+  top: -50px;
+  display: flex;
+  font-size: 60px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.container-home-page .grid-home-page {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+.grid-home-page .column-home-page {
+  width: 5vw;
+}
+
+.column-home-page div {
+  width: 100%;
+  height: 5vw;
+}
+
+.play-button {
+  position: absolute;
+  padding: 15px 30px;
+  font-family: "PixelarRegular", sans-serif;
+  font-size: 40px;
+  border: 2px solid #000;
+  background-color: white;
+  z-index: 3;
+  pointer-events: auto;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  transform: translateY(-5px);
+  background-color: black;
+  color: white;
+}
+
+.credits {
+  position: absolute;
+  bottom: 20px;
+  font-family: "PixelarRegular", sans-serif;
+  font-size: 20px;
+  padding: 5px 10px;
+  background: transparent;
+  color: white;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.right-game-info,
+.left-game-score {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 20%;
+  font-family: "PixelarRegular", sans-serif;
+  font-size: 20px;
+  padding: 0px 15px;
+  border: 2px solid #000;
+  background-color: white;
+  color: black;
+  z-index: 2;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  transition: all 0.3s ease;
+}
+
+.right-game-info {
+  right: 0px;
+}
+
+.left-game-score {
+  left: 0px;
+}
+
+.right-game-info:hover {
+  transform: translateX(10%);
+}
+
+.left-game-score:hover {
+  transform: translateX(-10%);
+}
+
+.reverse-enemy-image {
+  opacity: 1;
+  position: absolute;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  width: 270px;
+  height: 270px;
+  transition: all 0.3s ease;
+}
+
+.reverse-enemy-image.active {
+  opacity: 0;
+}
+
+.enemy-image {
+  opacity: 1;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  width: 270px;
+  height: 270px;
+  transition: all 0.3s ease;
+}
+
+.enemy-image.active {
+  opacity: 0;
 }

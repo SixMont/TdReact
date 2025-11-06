@@ -1,8 +1,7 @@
 export default function Credits() {
     return (
       <div className="credits">
-        <p>© 2024 Tower Defense React. All rights reserved.</p>
-        <p>
+        <p>© 2025 Tower Defense React. All rights reserved.
           Developed by{" "}
           <a
             href="https://github.com/SixMont"

@@ -2,11 +2,11 @@ import { Link, useParams } from "react-router-dom"
 import { formatIdentifier } from "../../utils/formatText"
 import { useState } from "react"
 import { turretsData, type TurretKey } from "../../data/turretsData"
+import BackButton from "../../components/common/BackButton"
 
 export default function TurretPage() {
   const params = useParams<{ turretId: string }>()
   const [hoveredState, setHoverState] = useState<string | null>(null)
-  const [hoveredReturn, setHoverReturn] = useState<boolean>(false)
 
   const isTurretKey = (k: string | undefined): k is TurretKey =>
     !!k && Object.prototype.hasOwnProperty.call(turretsData, k)
@@ -17,18 +17,8 @@ export default function TurretPage() {
 
   return (
     <div className="turret-page">
-      <Link to="/turrets">
-        <div
-          className="turret-back"
-          onMouseEnter={() => setHoverReturn(true)}
-          onMouseLeave={() => setHoverReturn(false)}
-        >
-          <div className={`arrow-left ${hoveredReturn ? "active" : ""}`}>
-            {" "}
-            &lt;{" "}
-          </div>
-          Back
-        </div>
+      <Link to="/info">
+        <BackButton />
       </Link>
       <h1 className="turret-title">
         {params.turretId ? formatIdentifier(params.turretId) : "Unknown"} Turret

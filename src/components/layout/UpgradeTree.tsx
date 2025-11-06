@@ -59,7 +59,7 @@ export default function UpgradeTree() {
   const nodeTypes = useMemo(() => ({ treeButton: TreeButton }), [])
 
   return (
-    <div style={{ width: "100%", height: "850px" }}>
+    <div className="upgrade-tree">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -73,7 +73,6 @@ export default function UpgradeTree() {
       >
         <MiniMap />
         <Controls />
-        <Background />
       </ReactFlow>
     </div>
   )
